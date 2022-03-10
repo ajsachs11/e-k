@@ -1,0 +1,288 @@
+@font-face {
+    font-family: Titlefont;
+    src: url("assets/titlefont3.ttf");
+  }
+
+  @font-face {
+    font-family: Titlefont2;
+    src: url("assets/titlefont2.ttf");
+  }
+
+  @font-face {
+    font-family: Subtitlefont;
+    src: url("assets/subtitlefont.otf");
+  }
+
+  @font-face {
+    font-family: Bodyfont;
+    src: url("assets/bodyfont.ttf");
+  }
+
+:root{
+    --title-font:"Titlefont";
+    --subtitle-font:"Subtitlefont";
+    --body-font:"Bodyfont";
+    --pink:#ff33a6;
+    --yellow:#9d69ff;
+    --white:white;
+    --black:black;
+    --margin-sides:5vw;
+    --margin-top:20vh;
+    --top-height:calc(100vh - var(--margin-top));
+    --offset:0.1em;
+    --width-margins:calc(100vw - (var(--margin-sides)*2));
+}
+
+canvas{
+    z-index:-2;
+}
+
+html{
+    font-size:2vh;
+}
+
+body{
+    /* font-size:2vh; */
+    margin:0;
+    box-sizing: border-box;
+    overflow-x:hidden;
+}
+
+section{
+    width:100vw;
+    height:100vh;
+}
+
+h1{
+    font-size:3rem;
+    margin:0;
+    font-family: var(--title-font);
+}
+
+h2{
+    font-size:3rem;
+    margin:0;
+    font-family: var(--title-font);
+    text-transform: capitalize;
+}
+
+h3{
+    font-size: 1.85rem;
+    margin-bottom:0;
+    margin-top:1.5em;
+    font-family: var(--title-font);
+}
+
+p{
+    margin-top:0.75em;
+    font-size:1.85rem;
+    font-family: var(--body-font);
+}
+
+a{
+    color:var(--black);
+    text-underline-offset: var(--offset);
+}
+
+
+/* main{
+    scroll-snap-type: y mandatory;
+} */
+
+#main{
+    background-color:var(--white);
+    position:sticky;
+    top:0;
+    z-index:0;
+}
+
+.top{
+    position:absolute;
+    top:50vh;
+    left:var(--margin-sides);
+    width:var(--width-margins);
+}
+
+.date{
+    width:60vw;
+}
+
+.title{
+    position:fixed;
+    display:flex;
+    justify-content: space-between;
+    z-index:2;
+    width:var(--width-margins);
+    left:var(--margin-sides);
+    top:5vh;
+    font-family: var(--title-font);
+}
+
+
+.titleImg{
+    height:35vh;
+    width:20vh;
+    position:absolute;
+    display:none;
+}
+
+.titleImg img{
+    height:100%;
+    width:auto;
+    object-fit:contain;
+}
+
+#KiraImg{
+    left:20vw;
+    transform:rotate(10deg);
+}
+
+#EthanName{
+    mix-blend-mode: difference;
+}
+
+#EthanImg{
+    right:20vw;
+    transform:rotate(-5deg);
+}
+
+#FamilyImg{
+    top:0;
+    right:23vw;
+    transform:rotate(-10deg);
+}
+
+#WallyImg{
+    top:-15vh;
+    right:8vw;
+    transform:rotate(290deg);
+}
+
+.underlined{
+    text-decoration: underline;
+    text-underline-offset: var(--offset);
+    cursor:pointer;
+}
+
+#programming{
+    /* position:relative; */
+    z-index:1;
+    background-color: var(--yellow);
+    position:sticky;
+    top:0;
+}
+
+/* #programming .line{
+    position:absolute;
+    top:17vh;
+    width:100vw;
+    height:4px;
+    background-color:var(--black);
+} */
+
+.space{
+    top:16vh;
+    position:absolute;
+    height:3px;
+    width:49vw;
+    background-color: black;
+}
+
+.sectionContainer{
+    height:100%;
+    display: flex;
+    flex-flow:row wrap;
+    justify-content: space-between;
+}
+
+.left{
+    width: 49vw;
+    box-sizing: border-box;
+}
+
+.color{
+    word-break: break-word;
+    height:var(--top-height);
+    /* min-width:500px; */
+}
+
+.even{
+    padding: var(--margin-top) var(--margin-sides) 0px;
+}
+
+.right{
+    width:51vw;
+    box-sizing: border-box;
+}
+
+.odd{
+    padding: var(--margin-top) var(--margin-sides) 0px 2vw;
+}
+
+.flowers{
+    background-color: black;
+    overflow: hidden;
+    display: flex;
+    flex-flow: column nowrap;
+    box-sizing: border-box;
+    height:100%;
+    /* min-width:500px; */
+}
+
+.row{
+    display: flex;
+    flex-flow:row nowrap;
+    height: 100%;
+    width: 100%;
+    margin-left: 0vw;
+}
+
+.cell{
+    height:100%;
+    width:100%;
+}
+
+#pFlowers .cell .cls-1{
+    /* fill:var(--yellow); */
+    fill:var(--white);
+}
+
+#aFlowers .cell .cls-1{
+    /* fill:var(--pink); */
+    fill:var(--white);
+}
+
+#accommodations{
+    position:relative;
+    z-index:1;
+    background-color: var(--pink);
+}
+
+
+@media (max-width: 1200px){
+    html{
+        font-size:1.75vh;
+    }
+
+    :root{
+        --margin-top:17vh;
+    }
+
+    .date{
+        width:80vw;
+    }    
+}
+
+@media (max-width: 768px){
+    #pFlowers {
+        display:none;
+    }
+
+    #aFlowers {
+        display:none!important;
+    }
+
+    .color{
+        width:80vw!important;
+    }
+}
